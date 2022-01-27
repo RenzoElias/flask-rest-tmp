@@ -1,0 +1,7 @@
+pip install flask
+
+# Instalar formateador 'black'
+python -m pip install -U black
+
+pip install Flask-SQLAlchemy
+pip install mysqlclient
