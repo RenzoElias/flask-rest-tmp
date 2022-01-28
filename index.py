@@ -10,4 +10,4 @@ with app.app_context():
 # Si este proyecto se ejecuta como archivo principal
 if __name__ == "__main__":
     # Para que los cambios se actualize automaticamente - debug=True
-    app.run(debug=True) 
+    app.run(debug=True, port=5002)

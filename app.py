@@ -7,7 +7,8 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 app.secret_key = "secret key"
-app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql://root:123456@localhost/contactsdb'
+app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql://root:root@localhost/contactsdb'
+# app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql://root:123456@localhost/contactsdb'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # Se le pasa la configuracion de app, a SQLAchemy
@@ -28,3 +29,9 @@ app.register_blueprint(contacts)
 
 # Ahora este archivo solo contiene el codigo de la app y configuracion, de la BD, de las sessiones, Secret Keys
 # Las rutas estan por aparte y mucho mejor
+
+# Para poder crear el requirements.txt, donde estaran tus dependencias con sus versiones
+# pip freeze > requirements.txt
+
+# Para poder instalar las dependencias
+# pip install -r requirements.txt
