@@ -1,0 +1,22 @@
+create table if not exists contact
+(
+	id int auto_increment
+		primary key,
+	fullname varchar(100) null,
+	email varchar(100) null,
+	phone varchar(100) null
+);
+
+create definer = root@localhost procedure SP_getFullname(IN idContact varchar(100))
+BEGIN
+	SELECT fullname from contact
+	where contact.id = idContact LIMIT 1;
+END;
+
+INSERT INTO contactsdb.contact (id, fullname, email, phone) VALUES (1, 'Miguel Elias', 'correo@gmail.com', '12345');
+INSERT INTO contactsdb.contact (id, fullname, email, phone) VALUES (2, 'Miguel Elias', 'correo@gmail.com', '12345');
+INSERT INTO contactsdb.contact (id, fullname, email, phone) VALUES (3, 'Miguel Elias', 'correo@gmail.com', '12345');
+INSERT INTO contactsdb.contact (id, fullname, email, phone) VALUES (6, 'Renzo Calle', 'renzo@gmail.com', '123457');
+INSERT INTO contactsdb.contact (id, fullname, email, phone) VALUES (7, 'Renzo Calle', 'renzo@gmail.com', '123457');
+INSERT INTO contactsdb.contact (id, fullname, email, phone) VALUES (8, 'Renzo Calle', 'renzo@gmail.com', '123457');
+
